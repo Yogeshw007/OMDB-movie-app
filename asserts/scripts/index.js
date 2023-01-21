@@ -33,12 +33,7 @@ async function handleSuggestionSearch(e) {
     e.preventDefault();
 
     let searchText = e.target.value;
-
-    console.log(searchText);
-
     let searchMoviesList = await getMovieResults(searchText);
-
-    console.log(searchMoviesList)
 
     if (searchMoviesList) {
         movieListDropdown.classList.toggle('show');
@@ -46,7 +41,7 @@ async function handleSuggestionSearch(e) {
         for (let item of searchMoviesList) {
             const movieItem = document.createElement('a');
             movieItem.className = 'dropdown-item';
-            movieItem.href = `/movie.html?q=${item.Title}`;
+            movieItem.href = `/OMDB-movie-app/movie.html?q=${item.Title}`;
             movieItem.textContent = item.Title;
             movieItem.target = '_blank';
 
@@ -82,19 +77,17 @@ async function renderSearchProducts(e) {
         return;
     }
 
+    let searchMoviesList = await getMovieResults(searchField.value);
+    let searchInfoContainer = document.querySelector('#search-info');
+    let searchInfo = document.createElement('h1');
+
     homeBanner.style.display = 'none';
 
     movieContainer.innerHTML = '';
 
-    let searchMoviesList = await getMovieResults(searchField.value);
-
-    let searchInfoContainer = document.querySelector('#search-info');
     searchInfoContainer.innerHTML = ''
     searchInfoContainer.style.display = 'block';
-    let searchInfo = document.createElement('h1');
-
     searchInfo.innerHTML = `Showing results for "${searchField.value}"`;
-
     searchInfoContainer.appendChild(searchInfo);
 
     searchMoviesList.forEach(movie => {
@@ -107,7 +100,6 @@ async function renderSearchProducts(e) {
         let currentMovieFavorite;
 
         currentMovieFavorite = checkMovieIsPresentInFavoritesList(movie.Title);
-
 
         let movieItemHTML;
 
@@ -155,15 +147,9 @@ function addListenerToFavoriteIcon() {
 
             let moviePresentInFavorite = checkMovieIsPresentInFavoritesList(movieName);
 
-
-            console.log('moviePresentInFavorite', moviePresentInFavorite)
-
             if (moviePresentInFavorite) {
-                console.log('removed favorite')
-                removeMovieFromFavorite(movieName);
                 document.querySelector('i[data-name="' + movieName + '"]').style.color = 'black';
             } else {
-                console.log('added favorite')
                 fetch(`https://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`)
                     .then(res => res.json())
                     .then((data) => {

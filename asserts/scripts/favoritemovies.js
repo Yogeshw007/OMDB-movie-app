@@ -15,7 +15,7 @@ function renderMovieList() {
         let movieItemHTML = `
                     <img src="${movie.Poster}" class="card-img-top" style="width:100%;height:300px;aspect-ratio:1;" alt="banner image">
                     <div class="card-body">
-                        <a href="/movie.html?q=${movie.Title}">
+                        <a href="/OMDB-movie-app/movie.html?q=${movie.Title}">
                             <h5 class="card-title">${movie.Title}</h5>
                             <p class="card-text text-center">${movie.Plot}</p>
                         </a>
