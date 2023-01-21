@@ -1,0 +1,13 @@
+
+.favorite-icon-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    padding: 0.4rem;
+}
+
+.favorite-icon{
+    color: gold;
+}
+

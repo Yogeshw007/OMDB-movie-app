@@ -1,0 +1,63 @@
+body{
+    min-height: 100vh;
+}
+
+#brand-logo{
+    width: 70px;
+}
+
+#search-bar{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    width: 30rem;
+}
+
+#search-submit{
+    box-shadow: none;
+}
+
+.fa-magnifying-glass{
+    color: white;
+}
+
+#search-submit:hover{
+    background: none;
+}
+
+#main-navbar{
+    justify-content: center !important;
+}
+
+.navbar-collapse{
+    flex: none;
+}
+
+#fav-movie-link{
+    color: white;
+}
+
+#home-content{
+    font-size: 3rem;
+    font-style: italic;
+    color: rgb(80, 80, 80);
+    text-align: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-info{
+    text-align: center;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 2rem 10rem;
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    #search-bar{
+        width: 10rem;
+    }
+}

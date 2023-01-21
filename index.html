@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB home page</title>
+
+    <!-- Bootstrap extenal css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom external styles -->
+    <link rel="stylesheet" href="./asserts/styles/index.css">
+    <link rel="stylesheet" href="./asserts/styles/favoritemovies.css" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark" id="main-navbar">
+        <a class="navbar-brand" href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1200px-IMDB_Logo_2016.svg.png"
+                alt="brand logo" id="brand-logo">
+        </a>
+        <div class="collapse navbar-collapse d-flex flex-sm-column flex-md-row">
+            <form class="form-inline m-0">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                            id="search-bar" autocomplete="on">
+                        <div class="dropdown-menu" id="movie-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="btn btn-outline-light" id="search-submit" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+
+                <a href="./favoritemovies.html" class="ml-3" id="fav-movie-link" target="_blank">Favorites</a>
+            </form>
+        </div>
+    </nav>
+    <div id="home-content">
+        Hey you are in home... Do search for movies
+    </div>
+    <div id="search-info"></div>
+    <div id="movie-container" class="d-flex flex-row justify-content-center mx-5 flex-wrap">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/884384c329.js" crossorigin="anonymous"></script>
+    <script src="./asserts/scripts/index.js"></script>
+</body>
+
+</html>
