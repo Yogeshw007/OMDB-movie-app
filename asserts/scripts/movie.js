@@ -24,7 +24,7 @@ document.body.onload = function () {
         }
     });
 
-    fetch(`http://www.omdbapi.com/?t=${movieName}}&y=${currentYear}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?t=${movieName}}&y=${currentYear}&apikey=${apiKey}`)
         .then(res => res.json())
         .then(res => {
             movieJson = res;

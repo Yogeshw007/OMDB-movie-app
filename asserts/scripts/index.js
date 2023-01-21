@@ -164,7 +164,7 @@ function addListenerToFavoriteIcon() {
                 document.querySelector('i[data-name="' + movieName + '"]').style.color = 'black';
             } else {
                 console.log('added favorite')
-                fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`)
+                fetch(`https://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`)
                     .then(res => res.json())
                     .then((data) => {
                         let movieData = {
