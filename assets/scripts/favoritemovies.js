@@ -1,5 +1,6 @@
 let movieContainer = document.querySelector('#movie-container');
 
+// Function to render movies list
 function renderMovieList() {
     movieContainer.innerHTML = '';
 
@@ -30,6 +31,7 @@ function renderMovieList() {
     })
 }
 
+// Function to add listener to the favorite icon
 function addListenerToFavoriteIcon() {
     document.body.addEventListener('click', function (e) {
         if (e.target.className.includes('favorite-icon')) {

@@ -16,7 +16,6 @@ document.body.onload = function () {
     let queries = new URLSearchParams(window.location.search)
 
     let movieName = queries.get('q');
-    console.log(movieName)
 
     favList.forEach((movie) => {
         if (movieName === movie.Title) {
@@ -72,8 +71,6 @@ document.body.onload = function () {
                         return movieJson.Title != movieName;
                     });
 
-                    console.log('else  updated list', updatedList);
-
                     localStorage.setItem('favMoviesList', JSON.stringify(updatedList));
                 } else {
                     favIcon.style.color = 'gold';
@@ -82,8 +79,6 @@ document.body.onload = function () {
                     let updatedList = [...favList];
                     updatedList.push(movieData);
 
-                    console.log('if updated list', updatedList);
-
                     localStorage.setItem('favMoviesList', JSON.stringify(updatedList));
 
                     setTimeout(() => {
@@ -91,8 +86,6 @@ document.body.onload = function () {
                     }, 2000);
                 }
                 currentFavItem = !currentFavItem;
-
-                console.log(localStorage)
             });
 
         })

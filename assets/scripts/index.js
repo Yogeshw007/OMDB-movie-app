@@ -20,6 +20,7 @@ document.querySelector('body').addEventListener('click', function (e) {
 
 });
 
+// Function to get movie results response
 async function getMovieResults(searchKeyword) {
     const currentYear = new Date().getFullYear();
 
@@ -29,6 +30,7 @@ async function getMovieResults(searchKeyword) {
     return data.Search;
 }
 
+// Function to handle suggesstion search
 async function handleSuggestionSearch(e) {
     e.preventDefault();
 
@@ -51,6 +53,7 @@ async function handleSuggestionSearch(e) {
 
 }
 
+// Function to check if movie is present in favorites list
 function checkMovieIsPresentInFavoritesList(movie) {
     let favMoviesList = JSON.parse(localStorage.getItem('favMoviesList'));
 
@@ -63,6 +66,7 @@ function checkMovieIsPresentInFavoritesList(movie) {
     return movies.length > 0;
 }
 
+// Function to remove movies from favorites list
 function removeMovieFromFavorite(movie) {
     let favMoviesList = JSON.parse(localStorage.getItem('favMoviesList'));
     let updatedMovieList = favMoviesList.filter((favMovie) => favMovie.Title !== movie);
@@ -70,6 +74,7 @@ function removeMovieFromFavorite(movie) {
     localStorage.setItem('favMoviesList', JSON.stringify(updatedMovieList));
 }
 
+// Function to render the searched products
 async function renderSearchProducts(e) {
     e.preventDefault();
 
@@ -137,7 +142,7 @@ async function renderSearchProducts(e) {
     });
 }
 
-
+// Function to add listener to the favorites icon
 function addListenerToFavoriteIcon() {
 
     document.body.addEventListener('click', function (e) {
@@ -171,5 +176,4 @@ function addListenerToFavoriteIcon() {
         }
     });
 }
-
 addListenerToFavoriteIcon();
